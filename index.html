@@ -1,0 +1,1294 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Happy Birthday Varshini 🎂</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- Fonts -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&family=Great+Vibes&display=swap"
+      rel="stylesheet"
+    />
+
+    <style>
+      /* keep fade-in override at top to allow "show" to force visible during test */
+      .fade-in {
+        opacity: 1 !important;
+        transform: translateY(0) !important;
+      }
+
+      :root {
+        --bg-main: #050816;
+        --card: rgba(15, 23, 42, 0.9);
+        --accent: #f97316;
+        --accent-soft: rgba(249, 115, 22, 0.25);
+        --text: #e5e7eb;
+        --muted: #9ca3af;
+        --border-glow: rgba(248, 250, 252, 0.18);
+      }
+
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+
+      body {
+        font-family: "Poppins", sans-serif;
+        background: radial-gradient(circle at top, #111827 0, #020617 45%, #000 100%);
+        color: var(--text);
+        min-height: 100vh;
+        scroll-behavior: smooth;
+        overflow-x: hidden;
+      }
+
+      .bg-orbit {
+        position: fixed;
+        inset: 0;
+        pointer-events: none;
+        z-index: -1;
+        background:
+          radial-gradient(circle at 10% 20%, rgba(255, 192, 203, 0.15) 0, transparent 55%),
+          radial-gradient(circle at 80% 0%, rgba(96, 165, 250, 0.15) 0, transparent 55%),
+          radial-gradient(circle at 50% 100%, rgba(249, 115, 22, 0.18) 0, transparent 55%);
+        filter: blur(1px);
+      }
+
+      header {
+        position: sticky;
+        top: 0;
+        z-index: 10;
+        backdrop-filter: blur(12px);
+        background: linear-gradient(
+          to bottom,
+          rgba(15, 23, 42, 0.9),
+          rgba(15, 23, 42, 0.4),
+          transparent
+        );
+        border-bottom: 1px solid var(--border-glow);
+      }
+
+      .nav {
+        max-width: 1100px;
+        margin: 0 auto;
+        padding: 0.75rem 1.25rem;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+      }
+
+      .nav-logo {
+        display: flex;
+        align-items: center;
+        gap: 0.4rem;
+      }
+
+      .nav-logo-badge {
+        width: 32px;
+        height: 32px;
+        border-radius: 999px;
+        border: 1px solid var(--accent-soft);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-family: "Great Vibes", cursive;
+        font-size: 1.25rem;
+        background: radial-gradient(circle at 30% 0, #fde68a, #f97316);
+        box-shadow: 0 0 18px rgba(249, 115, 22, 0.5);
+      }
+
+      .nav-logo-text {
+        font-weight: 600;
+        font-size: 0.95rem;
+      }
+
+      .nav-logo-sub {
+        font-size: 0.7rem;
+        color: var(--muted);
+      }
+
+      .nav-links {
+        display: flex;
+        gap: 1rem;
+        font-size: 0.84rem;
+      }
+
+      .nav-links a {
+        text-decoration: none;
+        color: var(--muted);
+        padding: 0.25rem 0.6rem;
+        border-radius: 999px;
+        border: 1px solid transparent;
+        transition: all 0.2s ease;
+      }
+
+      .nav-links a:hover {
+        color: #f9fafb;
+        border-color: rgba(148, 163, 184, 0.5);
+        background: rgba(15, 23, 42, 0.8);
+      }
+
+      main {
+        max-width: 1100px;
+        margin: 0 auto;
+        padding: 2rem 1.25rem 3rem;
+      }
+
+      section {
+        margin-bottom: 3rem;
+      }
+
+      /* Hero */
+
+      .hero {
+        display: grid;
+        grid-template-columns: minmax(0, 1.4fr) minmax(0, 1fr);
+        gap: 2rem;
+        align-items: center;
+      }
+
+      @media (max-width: 800px) {
+        .hero {
+          grid-template-columns: minmax(0, 1fr);
+        }
+      }
+
+      .hero-text-badge {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.4rem;
+        padding: 0.2rem 0.55rem;
+        border-radius: 999px;
+        background: rgba(15, 23, 42, 0.9);
+        border: 1px solid var(--border-glow);
+        font-size: 0.75rem;
+        color: var(--muted);
+        margin-bottom: 0.8rem;
+      }
+
+      .hero-text-badge-dot {
+        width: 6px;
+        height: 6px;
+        border-radius: 999px;
+        background: #22c55e;
+        box-shadow: 0 0 12px rgba(34, 197, 94, 0.8);
+      }
+
+      .hero-title {
+        font-size: clamp(2rem, 4vw, 2.7rem);
+        line-height: 1.15;
+        margin-bottom: 0.6rem;
+      }
+
+      .hero-title span {
+        font-family: "Great Vibes", cursive;
+        font-size: 1.1em;
+        color: #f97316;
+      }
+
+      .hero-subtitle {
+        font-size: 0.9rem;
+        color: var(--muted);
+        max-width: 32rem;
+        margin-bottom: 1rem;
+      }
+
+      .hero-chip-row {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.5rem;
+        margin-bottom: 1.5rem;
+      }
+
+      .chip {
+        font-size: 0.7rem;
+        padding: 0.25rem 0.6rem;
+        border-radius: 999px;
+        border: 1px solid rgba(148, 163, 184, 0.6);
+        color: var(--muted);
+        background: rgba(15, 23, 42, 0.9);
+      }
+
+      .hero-cta {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.75rem;
+      }
+
+      .btn-primary,
+      .btn-outline {
+        border-radius: 999px;
+        padding: 0.55rem 1.05rem;
+        font-size: 0.8rem;
+        border: 1px solid transparent;
+        cursor: pointer;
+        transition: all 0.2s ease;
+        display: inline-flex;
+        align-items: center;
+        gap: 0.4rem;
+        text-decoration: none;
+      }
+
+      .btn-primary {
+        background: linear-gradient(135deg, #f97316, #fb7185);
+        border-color: rgba(248, 250, 252, 0.2);
+        color: #0b1120;
+        font-weight: 600;
+        box-shadow:
+          0 12px 30px rgba(248, 113, 113, 0.35),
+          0 0 20px rgba(249, 115, 22, 0.6);
+      }
+
+      .btn-primary:hover {
+        transform: translateY(-1px) scale(1.01);
+        box-shadow:
+          0 16px 40px rgba(248, 113, 113, 0.45),
+          0 0 28px rgba(249, 115, 22, 0.8);
+      }
+
+      .btn-outline {
+        border-color: rgba(148, 163, 184, 0.7);
+        color: var(--muted);
+        background: rgba(15, 23, 42, 0.9);
+      }
+
+      .btn-outline:hover {
+        border-color: rgba(248, 250, 252, 0.4);
+        color: #e5e7eb;
+        background: rgba(15, 23, 42, 1);
+      }
+
+      .hero-orbit-card {
+        position: relative;
+        padding: 1.2rem;
+        border-radius: 1.5rem;
+        background: radial-gradient(circle at top, rgba(15, 23, 42, 0.9), rgba(15, 23, 42, 0.95));
+        border: 1px solid var(--border-glow);
+        box-shadow:
+          0 18px 55px rgba(15, 23, 42, 0.9),
+          0 0 18px rgba(15, 23, 42, 1);
+        overflow: hidden;
+      }
+
+      .hero-orbit-inner {
+        border-radius: 1.1rem;
+        padding: 1rem;
+        background: radial-gradient(circle at 30% -10%, rgba(251, 113, 133, 0.28), transparent 55%),
+          radial-gradient(circle at 100% 100%, rgba(59, 130, 246, 0.3), transparent 55%),
+          rgba(15, 23, 42, 0.95);
+        border: 1px solid rgba(148, 163, 184, 0.4);
+        position: relative;
+        overflow: hidden;
+      }
+
+      .floating-heart {
+        position: absolute;
+        width: 20px;
+        height: 20px;
+        border-radius: 999px;
+        background: rgba(251, 113, 133, 0.7);
+        top: 50%;
+        left: 10%;
+        filter: blur(0.3px);
+        animation: floatUp 8s linear infinite;
+        opacity: 0.6;
+      }
+
+      .floating-heart::after {
+        content: "";
+        position: absolute;
+        inset: 5px;
+        border-radius: inherit;
+        background: radial-gradient(circle at 30% 0, #fecaca, #fb7185);
+      }
+
+      .floating-heart:nth-child(2) {
+        left: 80%;
+        animation-duration: 10s;
+        animation-delay: 1s;
+        transform: scale(1.1);
+      }
+
+      .floating-heart:nth-child(3) {
+        left: 50%;
+        animation-duration: 12s;
+        animation-delay: 2s;
+        transform: scale(0.8);
+      }
+
+      @keyframes floatUp {
+        0% {
+          transform: translate3d(0, 20px, 0) scale(1);
+          opacity: 0;
+        }
+        20% {
+          opacity: 0.7;
+        }
+        80% {
+          opacity: 0.7;
+        }
+        100% {
+          transform: translate3d(0, -80px, 0) scale(1.05);
+          opacity: 0;
+        }
+      }
+
+      .hero-counter-card {
+        position: relative;
+        z-index: 1;
+        padding: 0.8rem;
+        border-radius: 1rem;
+        background: rgba(15, 23, 42, 0.98);
+        border: 1px solid rgba(148, 163, 184, 0.4);
+        box-shadow: 0 0 24px rgba(15, 23, 42, 1);
+      }
+
+      .hero-counter-label {
+        font-size: 0.7rem;
+        color: var(--muted);
+        margin-bottom: 0.2rem;
+      }
+
+      .hero-counter-value {
+        font-size: 0.9rem;
+        font-weight: 500;
+      }
+
+      .hero-counter-highlight {
+        color: #f97316;
+        font-weight: 600;
+      }
+
+      .hero-note {
+        font-size: 0.7rem;
+        color: var(--muted);
+        margin-top: 0.4rem;
+      }
+
+      /* Generic section styles */
+
+      .section-heading {
+        font-size: 1.2rem;
+        font-weight: 600;
+        margin-bottom: 0.2rem;
+      }
+
+      .section-sub {
+        font-size: 0.8rem;
+        color: var(--muted);
+        margin-bottom: 1rem;
+      }
+
+      .card {
+        background: var(--card);
+        border-radius: 1.2rem;
+        padding: 1.1rem 1.1rem 1rem;
+        border: 1px solid var(--border-glow);
+        box-shadow: 0 16px 40px rgba(15, 23, 42, 0.9);
+      }
+
+      /* Memory */
+
+      .memory-text {
+        font-size: 0.85rem;
+        color: var(--muted);
+        line-height: 1.6;
+      }
+
+      /* -------- ORIGINAL SIMPLE GALLERY (kept, but overridden below) -------- */
+
+      .gallery-grid {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 0.7rem;
+      }
+
+      @media (max-width: 800px) {
+        .gallery-grid {
+          grid-template-columns: repeat(2, minmax(0, 1fr));
+        }
+      }
+
+      .gallery-item {
+        position: relative;
+        overflow: hidden;
+        border-radius: 1rem;
+        border: 1px solid rgba(148, 163, 184, 0.5);
+        cursor: pointer;
+        transform: translateY(0);
+        transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+        background: #020617;
+      }
+
+      .gallery-item img {
+        width: 100%;
+        height: 220px;
+        object-fit: cover;
+        display: block;
+        transition: transform 0.3s ease, opacity 0.3s ease;
+      }
+
+      .gallery-item:hover {
+        transform: translateY(-4px) scale(1.02);
+        box-shadow: 0 18px 40px rgba(15, 23, 42, 0.95);
+        border-color: rgba(248, 250, 252, 0.7);
+      }
+
+      .gallery-item:hover img {
+        transform: scale(1.06);
+      }
+
+      .gallery-caption {
+        position: absolute;
+        inset: auto 0 0 0;
+        padding: 0.35rem 0.6rem 0.5rem;
+        font-size: 0.7rem;
+        background: linear-gradient(to top, rgba(15, 23, 42, 0.96), transparent);
+        color: #e5e7eb;
+      }
+
+      /* Audio */
+
+      .audio-inner {
+        display: flex;
+        flex-direction: column;
+        gap: 0.6rem;
+      }
+
+      .audio-note {
+        font-size: 0.8rem;
+        color: var(--muted);
+      }
+
+      audio {
+        width: 100%;
+        outline: none;
+      }
+
+      /* Secrets */
+
+      .secret-text {
+        font-size: 0.85rem;
+        line-height: 1.5;
+      }
+
+      .secret-meta {
+        font-size: 0.75rem;
+        color: var(--muted);
+        margin-top: 0.3rem;
+      }
+
+      /* Message form */
+
+      .form-grid {
+        display: grid;
+        grid-template-columns: minmax(0, 1.4fr) minmax(0, 1fr);
+        gap: 1rem;
+      }
+
+      @media (max-width: 800px) {
+        .form-grid {
+          grid-template-columns: minmax(0, 1fr);
+        }
+      }
+
+      .form-group {
+        margin-bottom: 0.6rem;
+      }
+
+      label {
+        display: block;
+        font-size: 0.75rem;
+        color: var(--muted);
+        margin-bottom: 0.25rem;
+      }
+
+      input[type="text"],
+      input[type="email"],
+      input[type="datetime-local"],
+      textarea {
+        width: 100%;
+        padding: 0.5rem 0.7rem;
+        border-radius: 0.75rem;
+        border: 1px solid rgba(148, 163, 184, 0.7);
+        background: rgba(15, 23, 42, 0.95);
+        color: #e5e7eb;
+        font-size: 0.8rem;
+        outline: none;
+        transition: border-color 0.2s ease, box-shadow 0.2s ease;
+      }
+
+      input:focus,
+      textarea:focus {
+        border-color: rgba(248, 250, 252, 0.9);
+        box-shadow: 0 0 0 1px rgba(248, 250, 252, 0.3);
+      }
+
+      textarea {
+        min-height: 120px;
+        resize: vertical;
+      }
+
+      .privacy-note {
+        font-size: 0.7rem;
+        color: var(--muted);
+        margin-top: 0.4rem;
+      }
+
+      .form-status {
+        font-size: 0.75rem;
+        margin-top: 0.4rem;
+      }
+
+      .form-status.success {
+        color: #4ade80;
+      }
+
+      .form-status.error {
+        color: #fb7185;
+      }
+
+      footer {
+        font-size: 0.7rem;
+        color: var(--muted);
+        text-align: center;
+        margin-top: 1.5rem;
+        padding-top: 1rem;
+        border-top: 1px solid rgba(15, 23, 42, 0.9);
+      }
+
+      /* 🔥 extra: animated name glow */
+      .animated-name {
+        font-family: "Great Vibes", cursive;
+        font-size: 1.2em;
+        color: #ffb869;
+        animation: nameGlow 2.6s ease-in-out infinite alternate;
+      }
+
+      @keyframes nameGlow {
+        0% {
+          text-shadow: 0 0 12px #f97316;
+          opacity: 0.8;
+        }
+        100% {
+          text-shadow: 0 0 28px #fbbf77, 0 0 48px #fb923c;
+          opacity: 1;
+        }
+      }
+
+      /* 🎈 Balloons */
+
+      .balloon {
+        position: fixed;
+        bottom: -120px;
+        width: 60px;
+        height: 80px;
+        border-radius: 50% 50% 45% 45%;
+        background: radial-gradient(circle at 30% 20%, #ffd1e5, #fb7185);
+        box-shadow: 0 10px 25px rgba(15, 23, 42, 0.8);
+        opacity: 0.9;
+        z-index: -1;
+        animation: balloonFloat 18s linear infinite;
+      }
+
+      .balloon::after {
+        content: "";
+        position: absolute;
+        width: 2px;
+        height: 35px;
+        background: rgba(248, 250, 252, 0.8);
+        left: 50%;
+        bottom: -35px;
+        transform: translateX(-50%);
+      }
+
+      @keyframes balloonFloat {
+        0% {
+          transform: translateY(0) translateX(0) rotate(2deg);
+          opacity: 0;
+        }
+        10% {
+          opacity: 0.9;
+        }
+        100% {
+          transform: translateY(-140vh) translateX(10px) rotate(-4deg);
+          opacity: 0;
+        }
+      }
+
+      /* ✨ Sparkles */
+
+      .sparkle {
+        position: fixed;
+        width: 4px;
+        height: 4px;
+        border-radius: 999px;
+        background: #fdf2ff;
+        opacity: 0.3;
+        z-index: -1;
+        animation: sparkleTwinkle 4s ease-in-out infinite;
+      }
+
+      @keyframes sparkleTwinkle {
+        0%,
+        100% {
+          opacity: 0.2;
+          transform: scale(0.7);
+        }
+        50% {
+          opacity: 1;
+          transform: scale(1.4);
+        }
+      }
+
+      /* 🎂 Cake */
+
+      .cake-wrapper {
+        margin-top: 1rem;
+      }
+
+      .cake {
+        position: relative;
+        width: 80px;
+        height: 50px;
+        margin: 0;
+        background: linear-gradient(to top, #fed7aa, #fdba74);
+        border-radius: 12px;
+        box-shadow: 0 8px 20px rgba(15, 23, 42, 0.8);
+        animation: cakePop 0.8s ease-out forwards;
+      }
+
+      .cake::before {
+        content: "";
+        position: absolute;
+        inset: 8px 8px 20px 8px;
+        background: repeating-linear-gradient(
+          -45deg,
+          rgba(248, 250, 252, 0.9),
+          rgba(248, 250, 252, 0.9) 5px,
+          rgba(248, 250, 252, 0.3) 5px,
+          rgba(248, 250, 252, 0.3) 10px
+        );
+        border-radius: 10px;
+        opacity: 0.9;
+      }
+
+      .candle {
+        position: absolute;
+        top: -24px;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 6px;
+        height: 24px;
+        border-radius: 999px;
+        background: linear-gradient(to bottom, #e5e7eb, #9ca3af);
+      }
+
+      .flame {
+        position: absolute;
+        top: -34px;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 14px;
+        height: 20px;
+        border-radius: 999px;
+        background: radial-gradient(circle at 30% 0, #fef9c3, #f97316);
+        box-shadow: 0 0 14px rgba(249, 115, 22, 0.9);
+        animation: flameFlicker 0.18s infinite alternate;
+      }
+
+      @keyframes flameFlicker {
+        0% {
+          transform: translateX(-50%) scale(0.9);
+          opacity: 0.85;
+        }
+        100% {
+          transform: translateX(-50%) scale(1.15);
+          opacity: 1;
+        }
+      }
+
+      @keyframes cakePop {
+        0% {
+          transform: translateY(12px) scale(0.7);
+          opacity: 0;
+        }
+        100% {
+          transform: translateY(0) scale(1);
+          opacity: 1;
+        }
+      }
+
+      /* ================== GALLERY — upgraded ✨ ================== */
+
+      .gallery-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+        gap: 1rem;
+      }
+
+      .gallery-item {
+        position: relative;
+        overflow: hidden;
+        border-radius: 1.1rem;
+        cursor: pointer;
+        transition: 0.6s ease;
+        border: 1px solid rgba(255, 255, 255, 0.15);
+        background: rgba(255, 255, 255, 0.03);
+        backdrop-filter: blur(4px);
+      }
+
+      .gallery-item img {
+        width: 100%;
+        height: 240px;
+        object-fit: cover;
+        transition: transform 1.2s ease, filter 0.8s ease;
+        transform: scale(1.02);
+      }
+
+      /* Hover effect — tilt + zoom */
+      .gallery-item:hover {
+        transform: scale(1.04) rotateZ(-1deg);
+        box-shadow: 0 10px 35px rgba(0, 0, 0, 0.6);
+        border-color: rgba(249, 115, 22, 0.6);
+      }
+
+      .gallery-item:hover img {
+        transform: scale(1.18);
+        filter: brightness(1.1) contrast(1.15);
+      }
+
+      /* Floating caption */
+      .gallery-caption {
+        position: absolute;
+        bottom: 0;
+        width: 100%;
+        padding: 8px 12px;
+        font-size: 0.75rem;
+        color: #fff;
+        background: linear-gradient(to top, rgba(0, 0, 0, 0.8), transparent);
+        backdrop-filter: blur(3px);
+      }
+
+      /* ---------------- FULLSCREEN PREVIEW ---------------- */
+
+      #imgModal {
+        position: fixed;
+        inset: 0;
+        background: rgba(0, 0, 0, 0.85);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        z-index: 2000;
+        backdrop-filter: blur(6px);
+        cursor: zoom-out;
+      }
+
+      #imgModal img {
+        max-width: 90%;
+        max-height: 85vh;
+        border-radius: 1rem;
+        box-shadow: 0 0 40px rgba(255, 255, 255, 0.4);
+        animation: popIn 0.5s ease;
+      }
+
+      @keyframes popIn {
+        0% {
+          opacity: 0;
+          transform: scale(0.8);
+        }
+        100% {
+          opacity: 1;
+          transform: scale(1);
+        }
+      }
+
+      /* Fade-in on scroll */
+      .fade-in {
+        opacity: 0;
+        transform: translateY(22px);
+        transition: opacity 0.7s ease, transform 0.7s ease;
+      }
+
+      .fade-in.show {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="bg-orbit"></div>
+
+    <!-- floating balloons -->
+    <div class="balloon" style="left: 5%; animation-delay: 0s"></div>
+    <div class="balloon" style="left: 25%; animation-delay: 3s"></div>
+    <div class="balloon" style="left: 55%; animation-delay: 1.5s"></div>
+    <div class="balloon" style="left: 80%; animation-delay: 4.5s"></div>
+
+    <!-- sparkles (created with JS below) -->
+
+    <header>
+      <nav class="nav">
+        <div class="nav-logo">
+          <div class="nav-logo-badge">V</div>
+          <div>
+            <div class="nav-logo-text">Varshini’s Day</div>
+            <div class="nav-logo-sub">A little galaxy made just for you ✨</div>
+          </div>
+        </div>
+        <div class="nav-links">
+          <a href="#hero">Home</a>
+          <a href="#memories">Memory lane</a>
+          <a href="#gallery">Gallery</a>
+          <a href="#audio">Voice note</a>
+          <a href="#secret">Secret of the day</a>
+          <a href="#message">Message to me</a>
+        </div>
+      </nav>
+    </header>
+
+    <main id="root"></main>
+
+    <!-- sparkles script -->
+    <script>
+      (function () {
+        for (let i = 0; i < 80; i++) {
+          const s = document.createElement("div");
+          s.className = "sparkle";
+          s.style.top = Math.random() * 100 + "vh";
+          s.style.left = Math.random() * 100 + "vw";
+          s.style.animationDelay = Math.random() * 4 + "s";
+          document.body.appendChild(s);
+        }
+      })();
+    </script>
+
+    <!-- React via CDN -->
+    <script src="https://unpkg.com/react@18/umd/react.development.js"></script>
+    <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+
+    <script type="text/babel">
+      const { useState, useEffect } = React;
+
+      const secrets = [
+        "Secret #1: The first time I remember you is two tiny kids in school and how hard  it was for me to have a convo somehow that memory never left me .",
+        "Secret #2: I've dont know if i should say or not but during teachers day in bhashyam school u were looking like a dream i coudn't take my eyes from u for like 30 seconds",
+        "Secret #3: I am extremely sorry but let me say it clearly and please dont laugh while u were teaching on that teachers day i peeked at ur waist and u noticed it instantly sorry for it a hussain gani vala dorkanu ...",
+        "Secret #4: You were and will be always special to me since childhood and decided to not have any new spark again in my life what ever happens.",
+        "Secret #5: This whole website exists because on your birthday, I wanted you to know you’ve always been unforgettable to me.",
+        "Secret #6: I know i am boring i may annoying but having u around i feel lucky.",
+        "Secret #7: there are many things to talk about but i dont think confessing here proves anything for u that how much i care or lets say it loved u",
+        "Secret #8: i want to talk to u daily but i feel like we need to know more about each other and i assure u that  u are and will be first and last spark of my life",
+        "Secret #9: Another thing is why i sensed it a little late is becoz i know i am dumb and u r too good for me so i kept it to myself",
+        "Secret #10: i can only confess this to u when i can stand on my feet financially stable and have a good career so that i can be a good partner to u",
+        "Secret #11: till then i will wait for u no matter how long it takes because u r worth waiting for",
+        "secret #12: u will always find this site in my github repo if i dont have the courage to tell u in person",
+        "Secret #13: I've always been a bit shy, but I've never stopped caring about you.",
+        "Secret #14: i want to know u more but only if u would allow me",
+        "Secret #15: i am playing the waiting game because i respect u and ur decisions",
+        "Secret #16: i can chat with u every day but only if u allow me to",
+        "Secret #17: if i did'nt confess this to u in any point of life i would consider it  was my first regret",
+        "Secret #18: This website just displays a fraction of how much u mean to me", 
+      ];
+
+      function getTodaySecretIndex() {
+        const today = new Date();
+        return today.getDate() % secrets.length;
+      }
+
+      function HeroSection() {
+        const [yearsKnown, setYearsKnown] = useState(0);
+
+        useEffect(() => {
+          const approxAgeNow = 23; // change if you want exact
+          setYearsKnown(approxAgeNow - 6);
+
+          // typing effect for her name
+          const name = "Varshini";
+          const el = document.getElementById("varshiniName");
+          if (!el) return;
+
+          el.textContent = "";
+          let i = 0;
+          const timer = setInterval(() => {
+            if (i < name.length) {
+              el.textContent += name.charAt(i);
+              i++;
+            } else {
+              clearInterval(timer);
+            }
+          }, 150);
+
+          return () => clearInterval(timer);
+        }, []);
+
+        const scrollToMessage = () => {
+          const el = document.getElementById("message");
+          if (el) el.scrollIntoView({ behavior: "smooth" });
+        };
+
+        const scrollToSecret = () => {
+          const el = document.getElementById("secret");
+          if (el) el.scrollIntoView({ behavior: "smooth" });
+        };
+
+        return (
+          <section id="hero" className="hero fade-in">
+            <div>
+              <div className="hero-text-badge">
+                <span className="hero-text-badge-dot" />
+                <span>For Varshini • From a very old friend</span>
+              </div>
+              <h1 className="hero-title">
+                Happy Birthday, <span id="varshiniName" className="animated-name"></span> 🎂
+              </h1>
+              <p className="hero-subtitle">
+                We met when we were just 6 years old. I don’t know if you still remember all the tiny
+                details — but I do. This little website is my way of saying: you’ve always been special.
+              </p>
+              <div className="hero-chip-row">
+                <span className="chip">Childhood connection 💫</span>
+                <span className="chip">Hand-made just for you ✍️</span>
+                <span className="chip">Safe space to say anything 🤍</span>
+              </div>
+              <div className="hero-cta">
+                <button className="btn-primary" onClick={scrollToMessage}>
+                  Send me a private message
+                  <span>↗</span>
+                </button>
+                <button className="btn-outline" onClick={scrollToSecret}>
+                  Reveal today’s secret
+                  <span>✨</span>
+                </button>
+              </div>
+
+              <div className="cake-wrapper">
+                <div className="cake">
+                  <div className="candle"></div>
+                  <div className="flame"></div>
+                </div>
+              </div>
+            </div>
+
+            <div className="hero-orbit-card">
+              <div className="hero-orbit-inner">
+                <div className="floating-heart" />
+                <div className="floating-heart" />
+                <div className="floating-heart" />
+
+                <div className="hero-counter-card">
+                  <div className="hero-counter-label">Time I’ve known you (approximately)</div>
+                  <div className="hero-counter-value">
+                    <span className="hero-counter-highlight">{yearsKnown} years</span> of random
+                    memories, tiny moments, and one constant — you.
+                  </div>
+                  <p className="hero-note">
+                    I don’t expect anything from you. I just wanted a corner of the internet that says,
+                    “You matter to me.” That’s all this is. 🌙
+                  </p>
+                </div>
+              </div>
+            </div>
+          </section>
+        );
+      }
+
+      function MemoriesSection() {
+        return (
+          <section id="memories" className="fade-in">
+            <h2 className="section-heading">Our tiny memory lane ✨</h2>
+            <p className="section-sub">
+              Just a small reminder that some people stay in our story, even if life keeps moving.
+            </p>
+            <div className="card">
+              <p className="memory-text">
+                I still remember us as kids — uniforms, bags bigger than us, and the way the world felt
+                so simple. You probably don’t know this, but some of my favourite quiet memories have
+                you in them. Maybe it’s the way you smiled, maybe it’s the way your name sounded.{" "}
+                <br />
+                <br />
+                Years passed. Life changed. But somehow, in the background of everything, the little
+                kid in me still remembers you with so much warmth. This page is that kid finally
+                speaking up. 🌻
+              </p>
+            </div>
+          </section>
+        );
+      }
+
+      function GallerySection() {
+        const [activeImage, setActiveImage] = useState(null);
+
+        const images = [
+          { src: "var1.jpg", alt: "Varshini photo 1" },
+          { src: "var2.jpg", alt: "Varshini photo 2" },
+          { src: "var3.jpg", alt: "Varshini photo 3" }
+        ];
+
+        const openImage = (src) => setActiveImage(src);
+        const closeImage = () => setActiveImage(null);
+
+        return (
+          <section id="gallery" className="fade-in">
+            <h2 className="section-heading">You in three frames 📸</h2>
+            <p className="section-sub">
+              I don’t have many pictures of you, but the ones I have are enough to say it — you look
+              gorgeous, always.
+            </p>
+            <div className="gallery-grid">
+              {images.map((img, idx) => (
+                <div
+                  className="gallery-item"
+                  key={idx}
+                  onClick={() => openImage(img.src)}
+                >
+                  <img src={img.src} alt={img.alt} />
+                  <div className="gallery-caption">Frame #{idx + 1} — completely stunning.</div>
+                </div>
+              ))}
+            </div>
+
+            {activeImage && (
+              <div id="imgModal" onClick={closeImage}>
+                <img src={activeImage} alt="Varshini full view" />
+              </div>
+            )}
+          </section>
+        );
+      }
+
+      function AudioSection() {
+        return (
+          <section id="audio" className="fade-in">
+            <h2 className="section-heading">A small voice note from me 🎧</h2>
+            <p className="section-sub">
+              Sometimes text isn’t enough. So I recorded this — just me talking honestly about how much
+              I admire you.
+            </p>
+            <div className="card audio-inner">
+              <p className="audio-note">
+                Hit play, and take your time. You can pause, replay, come back later — this page isn’t
+                going anywhere.
+              </p>
+              <audio controls src="voice-for-varshini.m4a">
+                Your browser does not support the audio element.
+              </audio>
+            </div>
+          </section>
+        );
+      }
+
+      function SecretSection() {
+        const [index, setIndex] = useState(getTodaySecretIndex());
+        const [secret, setSecret] = useState(secrets[index]);
+
+        const revealAnother = () => {
+          const next = (index + 1) % secrets.length;
+          setIndex(next);
+          setSecret(secrets[next]);
+        };
+
+        return (
+          <section id="secret" className="fade-in">
+            <h2 className="section-heading">Today’s secret from me 💌</h2>
+            <p className="section-sub">
+              I promised myself I’d reveal little secrets or thoughts, one day at a time.
+            </p>
+            <div className="card">
+              <p className="secret-text">{secret}</p>
+              <p className="secret-meta">
+                This is just one of many things I’ve kept in my head for years. I’m finally letting them
+                exist outside my overthinking brain.
+              </p>
+              <div style={{ marginTop: "0.8rem" }}>
+                <button className="btn-outline" onClick={revealAnother}>
+                  Reveal another one
+                </button>
+              </div>
+            </div>
+          </section>
+        );
+      }
+
+      function MessageSection() {
+        const [name, setName] = useState("Varshini");
+        const [email, setEmail] = useState("");
+        const [when, setWhen] = useState("");
+        const [message, setMessage] = useState("");
+        const [status, setStatus] = useState({ type: "", text: "" });
+
+        // Backend-only submit (POST to your server)
+        const handleSubmit = async (e) => {
+          e.preventDefault();
+
+          if (!message.trim()) {
+            setStatus({ type: "error", text: "Write at least a few words. I’ll value all of them." });
+            return;
+          }
+
+          setStatus({ type: "", text: "Sending..." });
+
+          try {
+            const res = await fetch("http://127.0.0.1:5000/api/messages", {
+              method: "POST",
+              headers: { "Content-Type": "application/json" },
+              body: JSON.stringify({
+                name: name || "Varshini",
+                email: email || "",
+                when: when || "",
+                message: message
+              })
+            });
+
+            const data = await res.json().catch(() => ({}));
+
+            if (!res.ok) {
+              // server returned an error status
+              setStatus({ type: "error", text: data.error || "Something went wrong while saving your message." });
+              return;
+            }
+
+            // success
+            setStatus({
+              type: "success",
+              text: "Your private message is saved safely. Only I can read it — she never loses privacy."
+            });
+
+            // clear only message field to allow multiple messages; keep name
+            setMessage("");
+            // optionally clear when/email if you prefer:
+            // setWhen("");
+            // setEmail("");
+          } catch (err) {
+            // network or other error
+            setStatus({
+              type: "error",
+              text: "Could not reach server. Make sure backend is running on http://localhost:5000."
+            });
+          }
+        };
+
+        return (
+          <section id="message" className="fade-in">
+            <h2 className="section-heading">A completely private message to me 🕊️</h2>
+            <p className="section-sub">
+              This space is just for you. No pressure. No expectations. Say anything you want — or
+              nothing at all.
+            </p>
+            <div className="card">
+              <div className="form-grid">
+                <form onSubmit={handleSubmit}>
+                  <div className="form-group">
+                    <label htmlFor="name">Your name</label>
+                    <input
+                      id="name"
+                      type="text"
+                      value={name}
+                      onChange={(e) => setName(e.target.value)}
+                    />
+                  </div>
+                  <div className="form-group">
+                    {/* kept intentionally blank UI for email to protect privacy (we still send empty/email if provided) */}
+                  </div>
+                  <div className="form-group">
+                    <label htmlFor="when">
+                      When do you want me to read this? (optional)
+                    </label>
+                    <input
+                      id="when"
+                      type="datetime-local"
+                      value={when}
+                      onChange={(e) => setWhen(e.target.value)}
+                    />
+                  </div>
+                  <div className="form-group">
+                    <label htmlFor="message">Your message</label>
+                    <textarea
+                      id="message"
+                      placeholder="You can write anything here. Even if it’s just ‘hi’."
+                      value={message}
+                      onChange={(e) => setMessage(e.target.value)}
+                    />
+                  </div>
+                  <button className="btn-primary" type="submit">
+                    Open private draft
+                  </button>
+                  {status.text && (
+                    <p
+                      className={
+                        "form-status " +
+                        (status.type === "success"
+                          ? "success"
+                          : status.type === "error"
+                          ? "error"
+                          : "")
+                      }
+                    >
+                      {status.text}
+                    </p>
+                  )}
+                  <p className="privacy-note">
+                    ✦ Nothing is stored publicly on this website. The message is stored safely on my server and only I can read it.
+                  </p>
+                </form>
+
+                <div>
+                  <p className="memory-text">
+                    I know it can be scary to be honest, so there’s no “expected answer” here. You can
+                    use this just to say how your day was, what you’re dreaming about, or what song
+                    you’re listening to on your birthday.
+                    <br />
+                    <br />
+                    Whatever you decide, thank you for even visiting this page. That alone means a lot
+                    more than you think. 🌙
+                  </p>
+                </div>
+              </div>
+            </div>
+          </section>
+        );
+      }
+
+      function App() {
+        return (
+          <>
+            <HeroSection />
+            <MemoriesSection />
+            <GallerySection />
+            <AudioSection />
+            <SecretSection />
+            <MessageSection />
+            <footer>
+              Built with a lot of overthinking, a lot of care, and just a little bit of courage.
+              <br />
+              Happy Birthday once again, Varshini. 🎂💫
+            </footer>
+          </>
+        );
+      }
+
+      const root = ReactDOM.createRoot(document.getElementById("root"));
+      root.render(<App />);
+
+      // Scroll fade-in for all .fade-in elements
+      window.addEventListener("DOMContentLoaded", () => {
+        const observer = new IntersectionObserver(
+          (entries) => {
+            entries.forEach((entry) => {
+              if (entry.isIntersecting) {
+                entry.target.classList.add("show");
+                observer.unobserve(entry.target);
+              }
+            });
+          },
+          { threshold: 0.18 }
+        );
+
+        document.querySelectorAll(".fade-in").forEach((el) => observer.observe(el));
+      });
+    </script>
+  </body>
+</html>
